@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>wordle</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <nav class="header__buttons">
+          <div class="header__buttons-left">
+            <button class="header__btn puzzle-btn">+</button>
+            <button class="header__btn language-btn">RU</button>
+          </div>
+          <div class="header__title">Worlde</div>
+          <div class="header-buttons-right">
+            <button class="header__btn statistic-btn"><span class="statistic"></span></button>
+            <button class="header__btn about-btn">?</button>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <div class="statistic-window" style="display: none">
+      <div class="container">
+        <div class="statistic__content">
+          <p>Статистика</p>
+          <div class="statisctic__blocks">
+            <div class="statisctic__block">
+              <div class="statistic__number" id="">0</div>
+              <div class="statistic__description">всего игр</div>
+            </div>
+            <div class="statisctic__block">
+              <div class="statistic__number" id="">0</div>
+              <div class="statistic__description">выиграно игр</div>
+            </div>
+            <div class="statisctic__block">
+              <div class="statistic__number" id="">0</div>
+              <div class="statistic__description">% побед</div>
+            </div>
+            <div class="statisctic__block">
+              <div class="statistic__number statistic__number--hashtag" id="">0</div>
+              <div class="statistic__description">лучшая попытка</div>
+            </div>
+            <div class="statisctic__block">
+              <div class="statistic__number" id="">0</div>
+              <div class="statistic__description">текущая серия</div>
+            </div>
+            <div class="statisctic__block">
+              <div class="statistic__number" id="">0</div>
+              <div class="statistic__description">лучшая серия</div>
+            </div>
+          </div>
+          <p>Распределение лучших попыток</p>
+          <div class="statistic__distributions">
+            <div class="statistic__distribution">
+              <p>#1</p>
+              <input type="range" />
+              <div class="statistic__distribution-number">0</div>
+            </div>
+            <div class="statistic__distribution">
+              <p>#2</p>
+              <input type="range" />
+              <div class="statistic__distribution-number">0</div>
+            </div>
+            <div class="statistic__distribution">
+              <p>#3</p>
+              <input type="range" />
+              <div class="statistic__distribution-number">0</div>
+            </div>
+            <div class="statistic__distribution">
+              <p>#4</p>
+              <input type="range" />
+              <div class="statistic__distribution-number">0</div>
+            </div>
+            <div class="statistic__distribution">
+              <p>#5</p>
+              <input type="range" />
+              <div class="statistic__distribution-number">0</div>
+            </div>
+            <div class="statistic__distribution">
+              <p>#6</p>
+              <input type="range" />
+              <div class="statistic__distribution-number">0</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <section class="main">
+      <div class="alert" style="display: none">
+        <div class="container">
+          <div class="alert__content">
+            <div class="alert__message"></div>
+            <p>загаданное слово: <span id="alert__correct-word"></span></p>
+            <p>используемый словарь: <span id="alert__lang"></span></p>
+            <p>До нового слова:</p>
+            <div class="alert__timer">00:00:00</div>
+            <button class="alert__btn">ИГРАТЬ БЕЗ УЧЁТА СТАТИСТИКИ</button>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="main-content">
+          <div class="main-content__line">
+            <div class="main-content__line-letter letter"></div>
+            <div class="main-content__line-letter letter"></div>
+            <div class="main-content__line-letter letter"></div>
+            <div class="main-content__line-letter letter"></div>
+            <div class="main-content__line-letter letter"></div>
+          </div>
+          <div class="main-content__line">
+            <div class="main-content__line-letter letter"></div>
+            <div class="main-content__line-letter letter"></div>
+            <div class="main-content__line-letter letter"></div>
+            <div class="main-content__line-letter letter"></div>
+            <div class="main-content__line-letter letter"></div>
+          </div>
+          <div class="main-content__line">
+            <div class="main-content__line-letter letter"></div>
+            <div class="main-content__line-letter letter"></div>
+            <div class="main-content__line-letter letter"></div>
+            <div class="main-content__line-letter letter"></div>
+            <div class="main-content__line-letter letter"></div>
+          </div>
+          <div class="main-content__line">
+            <div class="main-content__line-letter letter"></div>
+            <div class="main-content__line-letter letter"></div>
+            <div class="main-content__line-letter letter"></div>
+            <div class="main-content__line-letter letter"></div>
+            <div class="main-content__line-letter letter"></div>
+          </div>
+          <div class="main-content__line">
+            <div class="main-content__line-letter letter"></div>
+            <div class="main-content__line-letter letter"></div>
+            <div class="main-content__line-letter letter"></div>
+            <div class="main-content__line-letter letter"></div>
+            <div class="main-content__line-letter letter"></div>
+          </div>
+          <div class="main-content__line">
+            <div class="main-content__line-letter letter"></div>
+            <div class="main-content__line-letter letter"></div>
+            <div class="main-content__line-letter letter"></div>
+            <div class="main-content__line-letter letter"></div>
+            <div class="main-content__line-letter letter"></div>
+          </div>
+        </div>
+        <div class="main-keyboard">
+          <div class="main-keyboard__head">
+            <div class="main-keyboard__button letter">й</div>
+            <div class="main-keyboard__button letter">ц</div>
+            <div class="main-keyboard__button letter">у</div>
+            <div class="main-keyboard__button letter">к</div>
+            <div class="main-keyboard__button letter">е</div>
+            <div class="main-keyboard__button letter">н</div>
+            <div class="main-keyboard__button letter">г</div>
+            <div class="main-keyboard__button letter">ш</div>
+            <div class="main-keyboard__button letter">щ</div>
+            <div class="main-keyboard__button letter">з</div>
+            <div class="main-keyboard__button letter main-keyboard__button-hidden">х</div>
+            <div class="main-keyboard__button letter main-keyboard__button-hidden">ъ</div>
+          </div>
+          <div class="main-keyboard__middle">
+            <div class="main-keyboard__button letter">ф</div>
+            <div class="main-keyboard__button letter">ы</div>
+            <div class="main-keyboard__button letter">в</div>
+            <div class="main-keyboard__button letter">а</div>
+            <div class="main-keyboard__button letter">п</div>
+            <div class="main-keyboard__button letter">р</div>
+            <div class="main-keyboard__button letter">о</div>
+            <div class="main-keyboard__button letter">л</div>
+            <div class="main-keyboard__button letter">д</div>
+            <div class="main-keyboard__button letter main-keyboard__button-hidden">ж</div>
+            <div class="main-keyboard__button letter main-keyboard__button-hidden">э</div>
+          </div>
+          <div class="main-keyboard__footer">
+            <div class="main-keyboard__button main-keyboard__button--long letter">enter</div>
+            <div class="main-keyboard__button letter">я</div>
+            <div class="main-keyboard__button letter">ч</div>
+            <div class="main-keyboard__button letter">с</div>
+            <div class="main-keyboard__button letter">м</div>
+            <div class="main-keyboard__button letter">и</div>
+            <div class="main-keyboard__button letter">т</div>
+            <div class="main-keyboard__button letter">ь</div>
+            <div class="main-keyboard__button letter main-keyboard__button-hidden">б</div>
+            <div class="main-keyboard__button letter main-keyboard__button-hidden">ю</div>
+            <div class="main-keyboard__button main-keyboard__button--long letter">delete</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
